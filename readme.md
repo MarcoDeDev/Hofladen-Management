@@ -17,3 +17,14 @@
 ### Entity/Model-Enum
 * model.WarenEinheit
 * model.WarenTyp
+
+### Repository
+* repository.AbteilungRepository
+* repository.ArtikelRepository
+* repository.BestellungRepository
+* repository.GrossKundeRepository
+* repository.LieferantRepository
+* repository.LieferungRepository
+* repository.MitarbeiterRepository
+* repository.TeilDerBestellungRepository
+* repository.TeilDerLieferungRepository
