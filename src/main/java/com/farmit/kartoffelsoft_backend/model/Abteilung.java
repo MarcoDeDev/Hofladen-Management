@@ -27,4 +27,5 @@ public class Abteilung {
     private String AbteilungName;
     private String Berechtigung;
 
+
 }
