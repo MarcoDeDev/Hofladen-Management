@@ -48,3 +48,14 @@
 * service.TeilDerBestellungServiceImpl
 * service.TeilDerLieferungService
 * service.TeilDerLieferungServiceImpl
+* 
+### Controller
+* controller.AbteilungController
+* controller.ArtikelController
+* controller.BestellungController
+* controller.GrossKundeController
+* controller.LieferantController
+* controller.LieferungController
+* controller.MitarbeiterController
+* controller.TeilDerBestellungController
+* controller.TeilDerLieferungController
