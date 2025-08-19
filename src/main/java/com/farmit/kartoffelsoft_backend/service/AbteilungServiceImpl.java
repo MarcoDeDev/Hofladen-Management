@@ -2,10 +2,12 @@ package com.farmit.kartoffelsoft_backend.service;
 
 import com.farmit.kartoffelsoft_backend.model.Abteilung;
 import com.farmit.kartoffelsoft_backend.repository.AbteilungRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AbteilungServiceImpl implements AbteilungService{
 
     private final AbteilungRepository abteilungRepository;

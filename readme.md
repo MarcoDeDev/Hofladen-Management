@@ -2,7 +2,6 @@
 ## Version0.1
 
 
-
 ### Entity/Model
 * model.Abteilung
 * model.Artikel
@@ -48,7 +47,7 @@
 * service.TeilDerBestellungServiceImpl
 * service.TeilDerLieferungService
 * service.TeilDerLieferungServiceImpl
-* 
+ 
 ### Controller
 * controller.AbteilungController
 * controller.ArtikelController

@@ -2,10 +2,12 @@ package com.farmit.kartoffelsoft_backend.service;
 
 import com.farmit.kartoffelsoft_backend.model.GrossKunde;
 import com.farmit.kartoffelsoft_backend.repository.GrossKundeRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class GrossKundeServiceImpl implements GrossKundeService{
 
     private final GrossKundeRepository grossKundeRepository;

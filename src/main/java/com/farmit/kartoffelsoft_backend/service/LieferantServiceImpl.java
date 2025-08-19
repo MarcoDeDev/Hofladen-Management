@@ -2,10 +2,12 @@ package com.farmit.kartoffelsoft_backend.service;
 
 import com.farmit.kartoffelsoft_backend.model.Lieferant;
 import com.farmit.kartoffelsoft_backend.repository.LieferantRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class LieferantServiceImpl implements LieferantService{
 
     public final LieferantRepository lieferantRepository;
