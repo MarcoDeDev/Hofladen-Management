@@ -17,21 +17,21 @@ public class LieferungServiceImpl implements LieferungService{
 
     @Override
     public Lieferung save(Lieferung lieferung) {
-        return null;
+        return lieferungRepository.save(lieferung);
     }
 
     @Override
     public Optional<Lieferung> getLieferungById(long id) {
-        return null;
+        return lieferungRepository.findById(id);
     }
 
     @Override
     public List<Lieferung> getAllLieferung() {
-        return List.of();
+        return lieferungRepository.findAll();
     }
 
     @Override
     public void deleteLieferungById(long id) {
-
+        lieferungRepository.deleteById(id);
     }
 }

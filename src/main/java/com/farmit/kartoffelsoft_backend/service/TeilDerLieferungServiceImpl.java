@@ -16,21 +16,21 @@ public class TeilDerLieferungServiceImpl implements TeilDerLieferungService {
 
     @Override
     public TeilDerLieferung save(TeilDerLieferung teilDerLieferung) {
-        return null;
+        return teilDerLieferungRepository.save(teilDerLieferung);
     }
 
     @Override
     public Optional<TeilDerLieferung> getTeilDerLieferungById(long id) {
-        return Optional.empty();
+        return teilDerLieferungRepository.findById(id);
     }
 
     @Override
     public List<TeilDerLieferung> getAllTeilDerLieferung() {
-        return List.of();
+        return teilDerLieferungRepository.findAll();
     }
 
     @Override
     public void deleteTeilDerLieferungById(long id) {
-
+        teilDerLieferungRepository.deleteById(id);
     }
 }

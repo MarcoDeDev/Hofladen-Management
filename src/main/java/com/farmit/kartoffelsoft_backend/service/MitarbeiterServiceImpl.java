@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.Mitarbeiter;
 import com.farmit.kartoffelsoft_backend.repository.MitarbeiterRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class MitarbeiterServiceImpl implements MitarbeiterService {
 
@@ -15,21 +16,21 @@ public class MitarbeiterServiceImpl implements MitarbeiterService {
 
     @Override
     public Mitarbeiter save(Mitarbeiter mitarbeiter) {
-        return null;
+        return mitarbeiterRepository.save(mitarbeiter);
     }
 
     @Override
-    public Mitarbeiter getMitarbeiterById(long id) {
-        return null;
+    public Optional<Mitarbeiter> getMitarbeiterById(long id) {
+        return mitarbeiterRepository.findById(id);
     }
 
     @Override
     public List<Mitarbeiter> getAllMitarbeiter() {
-        return List.of();
+        return mitarbeiterRepository.findAll();
     }
 
     @Override
     public void deleteMitarbeiterById(long id) {
-
+        mitarbeiterRepository.deleteById(id);
     }
 }

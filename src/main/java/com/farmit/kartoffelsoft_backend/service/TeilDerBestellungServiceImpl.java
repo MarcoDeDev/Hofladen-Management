@@ -16,21 +16,21 @@ public class TeilDerBestellungServiceImpl implements TeilDerBestellungService {
 
     @Override
     public TeilDerBestellung save(TeilDerBestellung teilDerBestellung) {
-        return null;
+        return teilDerBestellungRepository.save(teilDerBestellung);
     }
 
     @Override
     public Optional<TeilDerBestellung> getTeilDerBestellungById(long id) {
-        return null;
+        return teilDerBestellungRepository.findById(id);
     }
 
     @Override
     public List<TeilDerBestellung> getAllTeilDerBestellung() {
-        return List.of();
+        return teilDerBestellungRepository.findAll();
     }
 
     @Override
     public void deleteTeilDerBestellungById(long id) {
-
+        teilDerBestellungRepository.deleteById(id);
     }
 }
