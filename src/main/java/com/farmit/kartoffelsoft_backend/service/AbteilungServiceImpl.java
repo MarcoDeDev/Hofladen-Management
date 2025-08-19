@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.Abteilung;
 import com.farmit.kartoffelsoft_backend.repository.AbteilungRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AbteilungServiceImpl implements AbteilungService{
 
@@ -15,21 +16,21 @@ public class AbteilungServiceImpl implements AbteilungService{
 
     @Override
     public Abteilung save(Abteilung abteilung) {
-        return null;
+        return abteilungRepository.save(abteilung);
     }
 
     @Override
-    public Abteilung getAbteilungById(long id) {
-        return null;
+    public Optional<Abteilung> getAbteilungById(long id) {
+        return abteilungRepository.findById(id);
     }
 
     @Override
     public List<Abteilung> getAllAbteilung() {
-        return List.of();
+        return abteilungRepository.findAll();
     }
 
     @Override
     public void deleteAbteilungById(long id) {
-
+        abteilungRepository.deleteById(id);
     }
 }
