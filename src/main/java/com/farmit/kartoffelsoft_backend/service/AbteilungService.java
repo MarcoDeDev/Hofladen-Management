@@ -3,12 +3,13 @@ package com.farmit.kartoffelsoft_backend.service;
 import com.farmit.kartoffelsoft_backend.model.Abteilung;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface AbteilungService {
 
     Abteilung save(Abteilung abteilung);
 
-    Abteilung getAbteilungById(long id);
+    Optional<Abteilung> getAbteilungById(long id);
 
     List<Abteilung> getAllAbteilung();
 

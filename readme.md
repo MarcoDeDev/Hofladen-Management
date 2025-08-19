@@ -28,3 +28,23 @@
 * repository.MitarbeiterRepository
 * repository.TeilDerBestellungRepository
 * repository.TeilDerLieferungRepository
+
+### Service
+* service.AbteilungService
+* service.AbteilungServiceImpl
+* service.ArtikelService
+* service.ArtikelServiceImpl
+* service.BestellungService
+* service.BestellungServiceImpl
+* service.GrossKundeService
+* service.GrossKundeServiceImpl
+* service.LieferantService
+* service.LieferantServiceImpl
+* service.LieferungService
+* service.LieferungServiceImpl
+* service.MitarbeiterService
+* service.MitarbeiterServiceImpl
+* service.TeilDerBestellungService
+* service.TeilDerBestellungServiceImpl
+* service.TeilDerLieferungService
+* service.TeilDerLieferungServiceImpl
