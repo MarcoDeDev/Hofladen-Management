@@ -1,6 +1,7 @@
 package com.farmit.kartoffelsoft_backend.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,8 @@ public class Mitarbeiter {
     private String nachname;
 
     @ManyToOne // Viele Mitarbeiter können einer Abteilung gehören
-    @JoinColumn(name = "abteilungID", nullable = false) // Fremdschlüssel Spalte
+    @JoinColumn(name = "abteilungId", nullable = false) // Fremdschlüssel Spalte
+    @JsonProperty("abteilungId") // um dem Frontend den richtigen Schlüssel zu kommunizieren
     private Abteilung abteilung;
 
 }

@@ -1,5 +1,6 @@
 package com.farmit.kartoffelsoft_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,8 @@ public class Lieferung {
     private LocalDateTime datum;
 
     @ManyToOne // Viele Lieferungen können von einem Lieferanten gemacht werden
-    @JoinColumn(name = "lieferantID") // Fremdschlüssel Spalte
+    @JoinColumn(name = "lieferantId") // Fremdschlüssel Spalte
+    @JsonProperty("lieferantId") // um dem Frontend den richtigen Schlüssel zu kommunizieren
     private Lieferant lieferant;
 
     private double gesamterPreis;

@@ -19,11 +19,11 @@ public class GrossKunde {
     private long id;
 
     private String vorname;
-    private String nachName;
+    private String nachname;
     private String firmaName;
-    private String Strasse;
+    private String strasse;
     private String plz;
     private String ort;
-    private String email_adresse;
+    private String emailAdresse;
     private String telefon;
 }

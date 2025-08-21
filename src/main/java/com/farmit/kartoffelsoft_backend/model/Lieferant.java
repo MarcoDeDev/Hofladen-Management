@@ -31,7 +31,7 @@ public class Lieferant {
     private String strasse;
     private String plz;
     private String ort;
-    private String email_adresse;
+    private String emailAdresse;
     private String telefon;
 
 }

@@ -1,6 +1,7 @@
 package com.farmit.kartoffelsoft_backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,7 +23,8 @@ public class Artikel {
     private String name;
 
     @ManyToOne // Viele Artikel können von einem Lieferanten geliefert werden
-    @JoinColumn(name = "lieferantID") // Fremdschlüssel Spalte
+    @JoinColumn(name = "lieferantId") // Fremdschlüssel Spalte
+    @JsonProperty("lieferantId") // um dem Frontend den richtigen Schlüssel zu kommunizieren
     private Lieferant lieferant;
 
     @OneToMany(mappedBy = "artikel", cascade = CascadeType.ALL, orphanRemoval = true) // Eine Bestellung enthält viele TeilDerBestellung
@@ -43,6 +45,5 @@ public class Artikel {
 
     private int verdorbene;
     private int rabat;
-
 
 }

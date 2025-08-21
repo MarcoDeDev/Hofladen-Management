@@ -24,8 +24,8 @@ public class Abteilung {
     @JsonIgnore // Vermeidet Endlosschleifen: Abteilung → Mitarbeiter → Abteilung → Mitarbeiter usw.
     private Set<Mitarbeiter> mitarbeiters = new HashSet<>();
 
-    private String AbteilungName;
-    private String Berechtigung;
+    private String abteilungName;
+    private String berechtigung;
 
 
 }
