@@ -26,4 +26,9 @@ public class Mitarbeiter {
     @JsonProperty("abteilungId") // um dem Frontend den richtigen Schlüssel zu kommunizieren
     private Abteilung abteilung;
 
+    public Mitarbeiter(String vorname, String nachname, Abteilung abteilung) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.abteilung = abteilung;
+    }
 }

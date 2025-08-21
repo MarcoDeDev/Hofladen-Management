@@ -27,5 +27,9 @@ public class Abteilung {
     private String abteilungName;
     private String berechtigung;
 
-
+    public Abteilung(Set<Mitarbeiter> mitarbeiters, String abteilungName, String berechtigung) {
+        this.mitarbeiters = mitarbeiters;
+        this.abteilungName = abteilungName;
+        this.berechtigung = berechtigung;
+    }
 }
