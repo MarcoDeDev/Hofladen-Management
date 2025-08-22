@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.TeilDerBestellung;
 import com.farmit.kartoffelsoft_backend.service.TeilDerBestellungService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +27,9 @@ public class TeilDerBestellungController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<TeilDerBestellung> getAllTeilDerBestellung(@PathVariable("id") long id){
-        return teilDerBestellungService.getTeilDerBestellungById(id);
+    public TeilDerBestellung getAllTeilDerBestellung(@PathVariable("id") long id){
+        return teilDerBestellungService.getTeilDerBestellungById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Teil der Bestellung not found"));
     }
 
     @PostMapping

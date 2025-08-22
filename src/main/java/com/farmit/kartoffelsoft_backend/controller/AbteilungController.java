@@ -5,6 +5,7 @@ import com.farmit.kartoffelsoft_backend.model.Abteilung;
 import com.farmit.kartoffelsoft_backend.service.AbteilungService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,8 +29,9 @@ public class AbteilungController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<Abteilung> getAllAbteilung(@PathVariable("id") long id){
-        return abteilungService.getAbteilungById(id);
+    public Abteilung getAllAbteilung(@PathVariable("id") long id){
+        return abteilungService.getAbteilungById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Abteilung not found"));
     }
 
     @PostMapping

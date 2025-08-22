@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.Bestellung;
 import com.farmit.kartoffelsoft_backend.service.BestellungService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +27,9 @@ public class BestellungController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<Bestellung> getAllBestellung(@PathVariable("id") long id){
-        return bestellungService.getBestellungById(id);
+    public Bestellung getAllBestellung(@PathVariable("id") long id){
+        return bestellungService.getBestellungById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Bestellung not found"));
     }
 
     @PostMapping

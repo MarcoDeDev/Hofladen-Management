@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.GrossKunde;
 import com.farmit.kartoffelsoft_backend.service.GrossKundeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +27,9 @@ public class GrossKundeController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<GrossKunde> getAllGrossKunde(@PathVariable("id") long id){
-        return grossKundeService.getGrossKundeById(id);
+    public GrossKunde getAllGrossKunde(@PathVariable("id") long id){
+        return grossKundeService.getGrossKundeById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Groß Kunde not found"));
     }
 
     @PostMapping

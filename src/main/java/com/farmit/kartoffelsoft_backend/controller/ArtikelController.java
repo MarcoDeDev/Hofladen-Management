@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.Artikel;
 import com.farmit.kartoffelsoft_backend.service.ArtikelService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +27,9 @@ public class ArtikelController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<Artikel> getAllArtikel(@PathVariable("id") long id){
-        return artikelService.getArtikelById(id);
+    public Artikel getAllArtikel(@PathVariable("id") long id){
+        return artikelService.getArtikelById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Artikel not found"));
     }
 
     @PostMapping

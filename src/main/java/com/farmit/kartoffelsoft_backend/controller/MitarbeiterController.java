@@ -5,6 +5,7 @@ import com.farmit.kartoffelsoft_backend.model.Mitarbeiter;
 import com.farmit.kartoffelsoft_backend.service.MitarbeiterService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,8 +28,9 @@ public class MitarbeiterController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<Mitarbeiter> getAllMitarbeiter(@PathVariable("id") long id){
-        return mitarbeiterService.getMitarbeiterById(id);
+    public Mitarbeiter getAllMitarbeiter(@PathVariable("id") long id){
+        return mitarbeiterService.getMitarbeiterById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Mitarbeiter not found"));
     }
 
     @PostMapping

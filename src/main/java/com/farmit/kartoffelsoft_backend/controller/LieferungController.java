@@ -4,6 +4,7 @@ import com.farmit.kartoffelsoft_backend.model.Lieferung;
 import com.farmit.kartoffelsoft_backend.service.LieferungService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,8 +27,9 @@ public class LieferungController {
     }
 
     @GetMapping ("/{id}")
-    public Optional<Lieferung> getAllLieferung(@PathVariable("id") long id){
-        return lieferungService.getLieferungById(id);
+    public Lieferung getAllLieferung(@PathVariable("id") long id){
+        return lieferungService.getLieferungById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Lieferung not found"));
     }
 
     @PostMapping
